@@ -38,7 +38,11 @@ value = 0
 if calculate_savings(r, semi_annual_raise, monthly_salary, months_taken, 1) < total_cost * portion_down_payment:
     print("Not possible")
 else:
+
+    indicador = False
     while abs(total_cost * portion_down_payment - savings) > 100:
+        if not indicador:
+            indicador = True
         value = (max_value + min_value) / 2
         savings = calculate_savings(r, semi_annual_raise, monthly_salary, months_taken, value)
 
